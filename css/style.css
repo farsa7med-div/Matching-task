@@ -1,0 +1,329 @@
+/*---------------- start of loading page------------------------*/
+@keyframes loader {
+
+  0%,
+  10%,
+  100% {
+    width: 40px;
+    height: 40px;
+  }
+
+  65% {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@keyframes loaderBlock {
+
+  0%,
+  30% {
+    transform: rotate(0);
+  }
+
+  55% {
+    background-color: #0fa0c5;
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes loaderBlockInverse {
+
+  0%,
+  20% {
+    transform: rotate(0);
+  }
+
+  55% {
+    background-color: #0fa0c5;
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.loader-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 9999999;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
+  animation: loader 1.2s infinite ease-in-out;
+
+
+}
+
+/* body{
+  transform: scale(.5);
+} */
+.loader span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #0fa0c5;
+  animation: loaderBlock 1.2s infinite ease-in-out both;
+}
+
+.loader span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loader span:nth-child(2) {
+  top: 0;
+  right: 0;
+  animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+}
+
+.loader span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+}
+
+.loader span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+/*---------------- end of loading page------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  line-height: 1.42857143;
+  cursor: default;
+  height: 100%;
+
+}
+h2{
+  font-size: calc(.4vw + 1vh + 2vmin);
+  padding: 5px;
+}
+
+
+.col-xs-3 {
+  width: 33.33333% !important;
+}
+
+.row {
+  margin-left: 8% !important;
+  margin-right: 0% !important;
+}
+
+
+.dummy-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 146, 138, 0.505);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+
+}
+
+.help {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 146, 138, 0.505);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+
+}
+
+.dummy-img .dummy {
+  border: 4px solid #f5821f;
+  border-radius: 20px;
+}
+
+#close-btn {
+  top: 8px;
+  right: 8px;
+  cursor: pointer
+}
+
+#close-btn2 {
+  top: 8px;
+  right: 8px;
+  cursor: pointer
+}
+
+.questions{
+
+  pointer-events: all;
+  background-color: white;
+}
+.disactive{
+  pointer-events: none;
+  background-color: rgba(229, 231, 224, 0.738);
+}
+.img-opacity{
+  opacity: 0.5;
+}
+#help-text {
+  border: 4px solid #f5821f;
+  border-radius: 20px;
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  padding: 10px;
+}
+
+/* start header style*/
+.header-icon {
+  width: 3vw;
+  margin: .5vw;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2vw;
+  margin-top: .5vw;
+}
+
+/* end of header style*/
+
+/* start of the body  */
+
+.back-blue {
+  background-color: #0fa0c5;
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+
+
+}
+
+.bg-white {
+  background-color: white;
+  position: absolute;
+  width: 97%;
+  height: 74vh;
+  left: 1.5%;
+  top: -2vh;
+  border: 4px solid #f5821f;
+  border-radius: 20px;
+  z-index: 1;
+  background-size: cover;
+
+}
+
+
+
+/* start of answers section*/
+.h-33
+{
+  height: 33.33%;
+}
+
+.right-icon {
+  width: 2.5vw;
+  /* position: absolute; */
+  right: 10px;
+  top: 10px;
+  display: none;
+
+}
+
+.clicked {
+  pointer-events: none;
+}
+.clicked-radio {
+  pointer-events: all;
+}
+.lines{
+  position: relative;
+  height: 33.33%;
+}
+.line{
+  stroke-width: 4;
+  stroke: #0fa0c5;
+}
+.wrong-icon {
+  width: 2.5vw;
+  /* position: absolute; */
+  right: 10px;
+  top: 10px;
+  display: none;
+
+}
+
+.active {
+  width: 2.5vw;
+  /* position: absolute; */
+  right: 10px;
+  top: 10px;
+  display: block;
+}
+
+/* ----- start footer*/
+footer {
+  background-color: #deecf6;
+  height: 15vh;
+}
+
+.footer-reply {
+  width: 4vw;
+  cursor: pointer;
+
+}
+
+.footer-show {
+  width: 5vw;
+  cursor: pointer;
+
+
+}
+
+.move-up
+{
+  transform: translateY(-10px) !important;
+}
+
+
+.radio-circle {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 3px #f5821f;
+  position: relative;
+  z-index: 5;
+transform: translateY(10px);
+}
+
+.GFG {
+  background-color: #0fa0c5;
+}
+.GFG2 {
+  background-color: white;
+}
+

@@ -55,7 +55,7 @@ $("document").ready(function () {
 
 /***************end scale functionality***************/
 
-
+/***************start show dummy and help buttom functionality***************/
 $('#show-dummy-btn').click(() => {
     $('#dummy-cont').css('display', 'flex')
 })
@@ -69,32 +69,38 @@ $('#close-btn2').click(() => {
 $('#help-btn').click(() => {
     $('#help-cont').css('display', 'flex')
 })
+/***************end show dummy and help buttom functionality***************/
+
+/***************start questions functionality***************/
 var temp = ""
 
 $('.questions').click(function () {
 
     temp = this.dataset.id
     console.log(temp);
-    $(this).find(".radio-circle").toggleClass("GFG");
+    $(this).find(".radio-circle").toggleClass("blue-radio");
     $(".answers").addClass("clicked-radio")
     $(".answers").removeClass("clicked")
     if (temp != "") {
         temp = this.dataset.id
-        console.log("new temp",temp);
+        console.log("new temp", temp);
         // var allquestions = $('.questions')
         // for(let q of allquestions){
         //   if($(q).data("id")==temp){
         //     console.log("equal")
-        //    $(q).find(".radio-circle").addClass("GFG")
+        //    $(q).find(".radio-circle").addClass("blue-radio")
         //    break;
         //   }
         //   else{
-        //     $(q).find(".radio-circle").addClass("GFG2")
+        //     $(q).find(".radio-circle").addClass("white-radio")
         //     continue;
         //   }
         // }
     }
 })
+/***************end questions functionality***************/
+
+/***************start answers functionality***************/
 
 $('.answers').click(function () {
     console.log("q id", temp)
@@ -110,13 +116,13 @@ $('.answers').click(function () {
                 $(quest).find("img").addClass("img-opacity")
                 $(quest).find(".radio-circle").addClass("img-opacity")
                 $(quest).addClass("clicked")
-                //$(quest).find(".radio-circle").addClass("GFG")
+                //$(quest).find(".radio-circle").addClass("blue-radio")
             }
         }
         $(this).find(".radio-circle").addClass("img-opacity")
         $(this).find("h2").addClass("img-opacity")
-        $(this).find(".radio-circle").addClass("GFG");
-        $(this).find(".radio-circle").removeClass("GFG2");
+        $(this).find(".radio-circle").addClass("blue-radio");
+        $(this).find(".radio-circle").removeClass("white-radio");
         let myAudio = document.querySelector('#audio')
         myAudio.play()
         console.log("good boy")
@@ -126,7 +132,7 @@ $('.answers').click(function () {
         temp = ""
     }
     else {
-        //  $(this).find(".radio-circle").toggleClass("GFG");
+        //  $(this).find(".radio-circle").toggleClass("blue-radio");
         console.log("bad")
         let myAudio2 = document.querySelector('#audio-wrong')
         myAudio2.play()
@@ -134,12 +140,16 @@ $('.answers').click(function () {
         $(this).find(".right-icon").removeClass("active")
         $(".answers").addClass("clicked-radio")
         $(".answers").removeClass("clicked")
-        $(this).find(".radio-circle").addClass("GFG2");
-        $(this).find(".radio-circle").removeClass("GFG");
+        $(this).find(".radio-circle").addClass("white-radio");
+        $(this).find(".radio-circle").removeClass("blue-radio");
         // temp = ""
     }
 
 })
+/***************end answers functionality***************/
+
+/***************strat matching animation ***************/
+
 const changeHeight = [
     { height: "100%" }
 ];
@@ -156,9 +166,12 @@ const heightZeroProps = {
     iterations: 1,
     fill: "forwards"
 };
-$('.footer-reply').click(function () {
+/***************end matching animation ***************/
+
+/***************start rset and show buttom animation ***************/
+$('.reset').click(function () {
     temp = ""
-    $(".radio-circle").removeClass("GFG")
+    $(".radio-circle").removeClass("blue-radio")
     $(".wrong-icon").removeClass("active")
     $(".right-icon").removeClass("active")
     $("img").removeClass("img-opacity")
@@ -173,7 +186,7 @@ $('.footer-reply').click(function () {
     $(".answers").removeClass("img-opacity")
 })
 
-$('.footer-show').click(function () {
+$('.show').click(function () {
     // var questions = $('.questions')
     // var answers = $('.answers')
     // //var qi=$('.test').find(dataset.dataset.id)
@@ -194,6 +207,7 @@ $('.footer-show').click(function () {
     $(".questions").addClass("img-opacity")
     $(".answers").addClass("img-opacity")
     $(".questions").addClass("clicked")
-
+    $('.show').addClass("img-opacity")
 
 })
+/***************end rset and show buttom animation ***************/

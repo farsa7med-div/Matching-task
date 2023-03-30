@@ -39,7 +39,7 @@ $("document").ready(function () {
 
 // });
 // Get the current scale of the website
-// var currentScale = document.documentElement.style.zoom || 1;
+//var currentScale = document.documentElement.style.zoom || 1;
 
 // Listen for the window resize event
 // window.addEventListener('resize', function() {
